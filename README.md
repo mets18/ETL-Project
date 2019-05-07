@@ -61,7 +61,7 @@
     "\n",
     "  Make sure \n",
     "o\tGet_Details.py and \n",
-    "o\tapp.py are both in same level as templates \n",
+    "o\tapp.py are both in same directory as templates \n",
     "o\tKick off app.py \n",
     "\n",
     "\tby running below -\n",
@@ -69,7 +69,6 @@
     "•\tpython app.py\n",
     "\n",
     "5. Go to chrome and visit http://127.0.0.1:5000/\n",
-    "        \n",
     "  Type in your favorite NJ town to find the schools and listings.\n",
     "     ex: SUMMIT, UNION, MILLBURN, EDISON\n"
    ]
@@ -92,9 +91,13 @@
    "cell_type": "markdown",
    "metadata": {},
    "source": [
+    "\n",
     "## Final Schema / Data Model \n",
     "\n",
-    "<img src=\"Images/Data_Model.png\">\n",
+    " \n",
+    "![Data_Model](Images/Data_Model.png)\n",
+    "\n",
+    "\n",
     "\n",
     "\n",
     "Data Model looks at two tables listing_info and school_info. A join at the 'TOWN' AND 'STATE' allows for building a relationship between the housing and school and related information. \n"
@@ -129,29 +132,31 @@
    "cell_type": "markdown",
    "metadata": {},
    "source": [
+    "# Needs to be updated\n",
+    "\n",
     "## Transformation Step\n",
     "\n",
-    "Raw data was scraped from the Niche.com and was transformed significantly, which involved below steps - \n",
+    "Explain how you got your raw data into the final model. \n",
+    "What were the specific steps you had to take to get the data into the final data model. \n",
     "\n",
-    "1. Cleansing using Python \n",
+    "Raw data scrapped from the Niche.com site was transformed significantly, and the following steps were involved.\n",
     "\n",
-    "Grouped the education level of schools across three categories - E = Elementary, M = Middle School and H = High School.\n",
-    "Filtered out  all ‘Private School’s’ and ‘online’ schools from the data set.\n",
-    "Removed removed for other states and retained only NJ\n",
-    "For records that did not have District and State available, it was derived by parsing the url.\n",
+    "Cleansing using Python \n",
     "\n",
-    "2. Cleansing Using SQL\n",
+    "We grouped the education level of schools across three categories - E = Elementary, M = Middle School and H = High School.\n",
+    "We stripped all ‘Private School’s’ and ‘online’ schools from the data set.\n",
+    "We are limiting the data collection to ‘NJ’ state (had to cleanse other states which appeared) \n",
+    "Parsed NAN  ‘State’,  and ‘district’ information using information from URL \n",
+    "\n",
+    "Cleansing Using SQL\n",
     "\n",
     "Grading was standardized – we removed the ‘Overall Niche’ Grade \n",
-    "e.g.  Before - A Overall Niche Grade\n",
-    "      After  - A \n",
+    "e.g.  Before = A Overall Niche Grade\n",
+    "cleaned = ‘A’ \n",
     "\n",
     "Removed ‘Students’ from the ‘Overall Number of student fields’\n",
-    "e.g. Before - 500 overall number of students\n",
-    "     After  - 500\n",
-    "\n",
-    "3. Add a new column - Rank which was based on the order in which schools are listed. \n",
-    "The rank was reset to 1 for each school type ( Elementary / Middle / High )\n",
+    "e.g. Before = 500 overall number of students\n",
+    "After/Cleaned = 500\n",
     "\n",
     "Using a Join to match Schools to Median Housing Price Information.\n",
     "Assigned Rank based on the sequence of listing.\n"
@@ -161,12 +166,13 @@
    "cell_type": "markdown",
    "metadata": {},
    "source": [
-    "# BONUS - To be updated \n",
-    "\n",
     "## APP Development \n",
     "\n",
-    "A web application was created to allow for searches using available home median home price range and category of schools (Elementary, Middle and/or High School). The report lists out the best ranked schcools/districts meeting the requirements.\n",
-    "\n"
+    "A web application was created to allow for searches by Town.\n",
+    "\n",
+    "This would list the highest ranked school for each school type  and Listings for the town.\n",
+    "\n",
+    "Url is provided via the app for further analysis.\n"
    ]
   },
   {
@@ -176,20 +182,13 @@
     "### Team: \t\n",
     "Mark Reilly, Renju Zacharia, Sanjeev Mankar, Abdul Razak"
    ]
-  },
-  {
-   "cell_type": "code",
-   "execution_count": null,
-   "metadata": {},
-   "outputs": [],
-   "source": []
   }
  ],
  "metadata": {
   "kernelspec": {
-   "display_name": "Python 3",
+   "display_name": "Python (PythonData)",
    "language": "python",
-   "name": "python3"
+   "name": "pythondata"
   },
   "language_info": {
    "codemirror_mode": {
