@@ -12,3 +12,19 @@ CREATE TABLE IF NOT EXISTS realtor_db.zillow_listing (
 );
 
 DELETE FROM realtor_db.zillow_listing; 
+
+CREATE OR REPLACE VIEW realtor_db.LISTINGS_INFO
+AS
+(
+SELECT 
+
+id as ID,
+median_price AS MEDIAN_PRICE,
+lat AS LAT,
+lng AS LNG,
+city AS TOWN,
+url AS URL,
+state_cd AS STATE
+
+FROM realtor_db.zillow_listing
+);
