@@ -104,8 +104,6 @@ Assumptions:
 •	All other factors, size of homes, age of homes, other factors – distance to work (if applicable) are all assumed to not have as significant impact as the first two (home price and school ranking)
 
 
-# Needs to be updated
-
 ## Transformation Step
 
 Explain how you got your raw data into the final model. 
@@ -113,22 +111,24 @@ What were the specific steps you had to take to get the data into the final data
 
 Raw data scrapped from the Niche.com site was transformed significantly, and the following steps were involved.
 
-Cleansing using Python 
+1. Cleansing using Python 
 
 We grouped the education level of schools across three categories - E = Elementary, M = Middle School and H = High School.
 We stripped all ‘Private School’s’ and ‘online’ schools from the data set.
 We are limiting the data collection to ‘NJ’ state (had to cleanse other states which appeared) 
 Parsed NAN  ‘State’,  and ‘district’ information using information from URL 
 
-Cleansing Using SQL
+2. Cleansing Using SQL
 
 Grading was standardized – we removed the ‘Overall Niche’ Grade 
-e.g.  Before = A Overall Niche Grade
-cleaned = ‘A’ 
+e.g.  Before - A Overall Niche Grade
+cleaned - A 
 
 Removed ‘Students’ from the ‘Overall Number of student fields’
-e.g. Before = 500 overall number of students
-After/Cleaned = 500
+e.g. Before - 500 overall number of students
+After/Cleaned - 500
+
+3. Added rank to schools in the order in which they are listed in niche.com
 
 Using a Join to match Schools to Median Housing Price Information.
 Assigned Rank based on the sequence of listing.
